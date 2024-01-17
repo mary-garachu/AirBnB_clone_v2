@@ -14,9 +14,9 @@ class FileStorage:
             """When a value is passed in cls"""
             filtered_objects = {}
 
-            for key, value in FileStorage.__objects.items():
+            for key, value in self.__objects.items():
                 """Check if the value is an instance of the specified class"""
-                if isinstance(value, cls):
+                if cls == value.__class__ or cls == value.__class__.__name__:
                     """Add key value pairs for the filtered dictionary"""
                     filtered_objects[key] = value
             return filtered_objects
